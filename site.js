@@ -59,7 +59,7 @@
       used.innerHTML='<span>Built with it:</span>'+s.used.map(function(u){return '<a href="'+u[1]+'">'+u[0]+'</a>'}).join('');
     };
     btns.forEach(function(b,i){
-      b.addEventListener('click',function(){pick(b)});
+      b.addEventListener('click',function(){pick(b);if(window.matchMedia('(max-width: 900px)').matches){var l=b.closest('.species');l.scrollTo({left:b.parentNode.offsetLeft-l.clientWidth/2+b.offsetWidth/2,behavior:reduce?'auto':'smooth'})}});
       b.addEventListener('keydown',function(e){
         var n=null;if(e.key==='ArrowDown'||e.key==='ArrowRight')n=btns[(i+1)%btns.length];if(e.key==='ArrowUp'||e.key==='ArrowLeft')n=btns[(i-1+btns.length)%btns.length];
         if(n){e.preventDefault();pick(n,true)}

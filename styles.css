@@ -386,6 +386,24 @@ p{margin:0 0 1em}
 .lb svg{width:18px;height:18px}
 .lb .count{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:var(--on-dark-muted);font-size:14px}
 
+
+@media (max-width:900px){
+  .timber{gap:14px}
+  .species{display:flex;gap:8px;overflow-x:auto;border-top:0;margin:0 calc(var(--gut)*-1);padding:2px var(--gut) 6px;scroll-snap-type:x proximity;scrollbar-width:none}
+  .species::-webkit-scrollbar{display:none}
+  .species li{flex:none;scroll-snap-align:start}
+  .species button{border:0;border-radius:99px;padding:0 18px;min-height:46px;box-shadow:inset 0 0 0 1.2px rgba(241,234,223,.25);align-items:center}
+  .species button .nm{font-size:20px}
+  .species button .latin{display:none}
+  .species button[aria-selected="true"]{padding-left:18px;background:var(--on-dark);color:var(--ink);box-shadow:none}
+  .species button[aria-selected="true"] .nm::before{display:none}
+  .specimen{grid-template-rows:auto auto}
+  .specimen .grain{aspect-ratio:16/10}
+  .specimen .body{padding:18px 18px 20px}
+  .specimen p{margin:8px 0 14px;font-size:15.5px}
+  .timber-hint{display:block}
+}
+
 /* motion: reveals only when JS is ready */
 .js [data-rv]{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .js [data-rv].in{opacity:1;transform:none}
