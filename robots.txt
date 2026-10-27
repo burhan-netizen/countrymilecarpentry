@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /
-# Concept site. Switch to Allow: / and add the sitemap on launch.
+Allow: /
